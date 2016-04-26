@@ -1,5 +1,6 @@
 package com.jarvanmo.myapplication.ui.activity;
 
+import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,26 +16,40 @@ import com.jarvanmo.myapplication.ui.viewmodel.MainViewModel;
 public class MainActivity extends BaseActivity<IMainView,MainPresenter> implements IMainView {
 
 
+    MainPresenter mPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        DataBindingUtil.setContentView(this,R.layout.activity_main);
     }
+
 
     @NonNull
     @Override
     public MainPresenter createPresenter() {
-        return null;
+        return mPresenter;
     }
 
 
+
     @Override
-    public void loadUserInfoStart() {
+    public void showLoading(String message) {
 
     }
 
     @Override
-    public void onLoadUserInfoComplete(MainViewModel viewModel) {
+    public void endLoading() {
+
+    }
+
+    @Override
+    public void onLoadUserInfoSuccess(MainViewModel viewModel) {
+
+    }
+
+    @Override
+    public void onLoadUserInfoFailed(String message) {
 
     }
 }

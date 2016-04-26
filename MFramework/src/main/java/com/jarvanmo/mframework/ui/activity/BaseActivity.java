@@ -2,6 +2,10 @@ package com.jarvanmo.mframework.ui.activity;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Bundle;
+import android.support.annotation.LayoutRes;
+import android.view.LayoutInflater;
+import android.view.View;
 
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import com.jarvanmo.mframework.ui.presenter.BasePresenter;
@@ -13,10 +17,17 @@ import com.jarvanmo.mframework.ui.view.BaseMvpView;
  */
 public abstract class BaseActivity<V extends BaseMvpView, P extends BasePresenter<V>> extends MvpActivity<V, P> {
 
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+
     protected boolean isAppFontSizeControlledByOs(){
         return true;
     }
-
 
     @Override
     public Resources getResources() {
@@ -32,4 +43,5 @@ public abstract class BaseActivity<V extends BaseMvpView, P extends BasePresente
             return  resources;
         }
     }
+
 }

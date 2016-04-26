@@ -17,7 +17,9 @@ public class MainPresenter extends BasePresenter<IMainView>{
     private ISignInBiz signInBiz;
     private IMainView mainView = getView();
 
-    public void getNameAndPassword(User user){
+
+    public void signIn(User user){
+
         signInBiz.signIn(user, new OnSignInListener() {
             @Override
             public void onSignSuccess(User user) {
@@ -25,7 +27,7 @@ public class MainPresenter extends BasePresenter<IMainView>{
                 MainViewModel viewModel = new MainViewModel();
                 viewModel.setUserName(user.getUserName());
                 viewModel.setPassword(user.getPassword());
-                mainView.onLoadUserInfoComplete(viewModel);
+                mainView.onLoadUserInfoSuccess(viewModel);
             }
 
             @Override
@@ -34,4 +36,5 @@ public class MainPresenter extends BasePresenter<IMainView>{
             }
         });
     }
+
 }
