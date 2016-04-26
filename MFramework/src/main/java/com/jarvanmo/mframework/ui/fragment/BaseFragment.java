@@ -1,0 +1,14 @@
+package com.jarvanmo.mframework.ui.fragment;
+
+import com.hannesdorfmann.mosby.mvp.MvpFragment;
+import com.jarvanmo.mframework.ui.presenter.BasePresenter;
+import com.jarvanmo.mframework.ui.view.BaseMvpView;
+
+/**
+ * base fragment for our app
+ *
+ */
+public abstract class BaseFragment<V extends BaseMvpView, P extends BasePresenter<V>> extends MvpFragment<V, P> {
+
+
+}
