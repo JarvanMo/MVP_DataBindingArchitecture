@@ -1,1 +1,1 @@
-include ':app', ':MFramework'
+include ':MFrameworkDemo', ':MFramework'
