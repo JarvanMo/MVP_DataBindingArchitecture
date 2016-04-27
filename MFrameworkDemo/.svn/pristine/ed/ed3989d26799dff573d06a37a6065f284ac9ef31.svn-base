@@ -1,0 +1,32 @@
+package com.jarvanmo.myapplication.app.module;
+
+import android.content.Context;
+
+import com.jarvanmo.myapplication.app.DemoApplication;
+
+import javax.inject.Singleton;
+
+import dagger.Module;
+import dagger.Provides;
+
+/**
+ * Created by mo on 16-4-27.
+ * @author mo
+ */
+@Module
+public class AppModule {
+    private final DemoApplication application;
+
+    public AppModule(DemoApplication application) {
+        this.application = application;
+    }
+
+
+    @Singleton
+    @Provides
+    Context provideApplicationContext() {
+        return application;
+    }
+
+
+}

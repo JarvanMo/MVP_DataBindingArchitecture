@@ -10,7 +10,6 @@ import com.jarvanmo.myapplication.app.component.AppComponent;
 import com.jarvanmo.myapplication.app.component.DaggerMainActivityComponent;
 import com.jarvanmo.myapplication.app.module.MainActivityModule;
 import com.jarvanmo.myapplication.databinding.ActivityMainBinding;
-import com.jarvanmo.myapplication.domain.api.ApiService;
 import com.jarvanmo.myapplication.domain.model.User;
 import com.jarvanmo.myapplication.ui.presenter.MainPresenter;
 import com.jarvanmo.myapplication.ui.view.main.IMainView;
@@ -23,17 +22,16 @@ public class MainActivity extends DemoBaseActivity implements IMainView {
 
     @Inject
     MainPresenter mPresenter;
+
     @Inject
     ActivityMainBinding activityMainBinding;
-    @Inject
-    ApiService apiService;
 
     ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (apiService != null) {
+        if (mPresenter != null) {
             MToast.showToast("inject ok");
             mPresenter.attachView(this);
         }
