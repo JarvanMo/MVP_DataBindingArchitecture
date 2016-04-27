@@ -1,0 +1,19 @@
+package com.jarvanmo.myapplication.app.component;
+
+import android.content.Context;
+
+import com.jarvanmo.myapplication.app.module.AppModule;
+
+import javax.inject.Singleton;
+
+import dagger.Component;
+
+/**
+ * Created by mo on 16-4-27.
+ *
+ */
+@Singleton
+@Component(modules = AppModule.class)
+public interface AppComponent {
+    Context context();
+}

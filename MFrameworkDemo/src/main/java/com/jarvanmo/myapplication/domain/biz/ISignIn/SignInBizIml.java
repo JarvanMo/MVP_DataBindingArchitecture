@@ -4,6 +4,7 @@ import com.jarvanmo.myapplication.domain.model.User;
 
 /**
  * Created by mo on 16-4-26.
+ *
  */
 public class SignInBizIml implements ISignInBiz {
 

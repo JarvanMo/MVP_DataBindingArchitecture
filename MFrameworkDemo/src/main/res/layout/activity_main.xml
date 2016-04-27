@@ -18,9 +18,36 @@
         >
 
         <EditText
+            android:id="@+id/user_name"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:hint="dsfdsfdsfds"
-            android:textSize="50dp" />
+            android:layout_height="50dp"
+            android:hint="userName"
+            android:textSize="15dp" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="password"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SignIn"
+            />
+
+        <TextView
+            android:id="@+id/show_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userInfo.userName}"/>
+
+        <TextView
+            android:id="@+id/show_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userInfo.password}"
+            />
     </LinearLayout>
 </layout>

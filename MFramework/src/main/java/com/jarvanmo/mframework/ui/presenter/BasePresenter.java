@@ -1,10 +1,10 @@
 package com.jarvanmo.mframework.ui.presenter;
 
-import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
+import com.hannesdorfmann.mosby.mvp.MvpPresenter;
 import com.jarvanmo.mframework.ui.view.BaseMvpView;
 
 /**
  * @author mo
  */
-public class BasePresenter<V extends BaseMvpView> extends MvpBasePresenter<V> {
+public  interface BasePresenter<V extends BaseMvpView> extends MvpPresenter<V> {
 }
