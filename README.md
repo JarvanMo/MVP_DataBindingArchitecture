@@ -1,5 +1,5 @@
 # MVP_DataBindingArchitecture
-MVP+DataBinding
+MVP+DataBinding+Dagger
 
 
-underdevelopment
+still under development
