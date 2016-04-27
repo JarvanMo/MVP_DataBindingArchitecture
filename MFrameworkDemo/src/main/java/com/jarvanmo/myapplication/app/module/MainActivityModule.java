@@ -3,33 +3,30 @@ package com.jarvanmo.myapplication.app.module;
 import android.databinding.DataBindingUtil;
 
 import com.jarvanmo.myapplication.R;
-import com.jarvanmo.myapplication.app.DemoBaseActivity;
-import com.jarvanmo.myapplication.app.scope.ActivityScope;
 import com.jarvanmo.myapplication.databinding.ActivityMainBinding;
+import com.jarvanmo.myapplication.ui.activity.MainActivity;
 import com.jarvanmo.myapplication.ui.presenter.MainPresenter;
 
 import dagger.Module;
 import dagger.Provides;
 
 /**
- * Created by mo on 16-4-26.
- * @author mo
+ * Created by mo on 16-4-27.
+ *
  */
 @Module
-public class ActivityModule {
+public class MainActivityModule {
 
-    private final DemoBaseActivity activity;
+    MainActivity mMainActivity;
 
-    public ActivityModule(DemoBaseActivity activity) {
-        this.activity = activity;
+
+    public MainActivityModule(MainActivity mainActivity){
+        this.mMainActivity = mainActivity;
     }
 
-    @Provides
-    @ActivityScope
-    DemoBaseActivity activity() {
-        return activity;
+    MainActivity activity(){
+        return mMainActivity;
     }
-
 
     @Provides
     MainPresenter providePresenter() {
@@ -39,7 +36,6 @@ public class ActivityModule {
 
     @Provides
     ActivityMainBinding provideActivityMainBinding() {
-        return DataBindingUtil.setContentView(activity, R.layout.activity_main);
+        return DataBindingUtil.setContentView(mMainActivity, R.layout.activity_main);
     }
-
 }

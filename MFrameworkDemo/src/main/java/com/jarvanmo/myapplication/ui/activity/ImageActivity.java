@@ -1,0 +1,15 @@
+package com.jarvanmo.myapplication.ui.activity;
+
+import com.jarvanmo.myapplication.app.DemoBaseActivity;
+import com.jarvanmo.myapplication.app.component.AppComponent;
+
+/**
+ * Created by mo on 16-4-27.
+ * @author mo
+ */
+public class ImageActivity extends DemoBaseActivity{
+    @Override
+    protected void setupActivityComponent(AppComponent appComponent) {
+
+    }
+}

@@ -1,0 +1,17 @@
+package com.jarvanmo.myapplication.app.component;
+
+import com.jarvanmo.myapplication.app.module.MainActivityModule;
+import com.jarvanmo.myapplication.app.scope.ActivityScope;
+import com.jarvanmo.myapplication.ui.activity.MainActivity;
+
+import dagger.Component;
+
+/**
+ * Created by mo on 16-4-27.
+ * @author mo
+ */
+@ActivityScope
+@Component(dependencies = AppComponent.class ,modules = {MainActivityModule.class})
+public interface MainActivityComponent {
+    void inject(MainActivity mainActivity);
+}

@@ -1,0 +1,40 @@
+package com.jarvanmo.myapplication.domain.api;
+
+import java.util.concurrent.TimeUnit;
+
+import javax.inject.Singleton;
+
+import dagger.Module;
+import dagger.Provides;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
+
+/**
+ * Created by mo on 16-4-27.
+ *
+ * @author mo
+ */
+@Module
+public class ApiServiceModule {
+
+    private static final String BASE_URL = "";
+    @Provides
+    @Singleton
+    OkHttpClient provideOkHttpClient() {
+
+        return new OkHttpClient.Builder()//
+                .connectTimeout(10 * 1000, TimeUnit.MILLISECONDS)//
+                .readTimeout(10 * 1000, TimeUnit.MILLISECONDS)//
+                .build();
+    }
+
+    @Provides
+    @Singleton
+    ApiService provideApiService(OkHttpClient okHttpClient) {
+
+        Retrofit retrofit = new Retrofit.Builder().client(okHttpClient).baseUrl(BASE_URL).build();
+
+        return retrofit.create(ApiService.class);
+    }
+
+}

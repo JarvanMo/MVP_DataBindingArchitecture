@@ -2,13 +2,11 @@ package com.jarvanmo.myapplication.ui.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.jarvanmo.mframework.util.MToast;
 import com.jarvanmo.myapplication.app.DemoBaseActivity;
-import com.jarvanmo.myapplication.app.component.AppComponent;
-import com.jarvanmo.myapplication.app.component.DaggerMainActivityComponent;
-import com.jarvanmo.myapplication.app.module.MainActivityModule;
 import com.jarvanmo.myapplication.databinding.ActivityMainBinding;
 import com.jarvanmo.myapplication.domain.model.User;
 import com.jarvanmo.myapplication.ui.presenter.MainPresenter;
@@ -51,10 +49,12 @@ public class MainActivity extends DemoBaseActivity implements IMainView {
     }
 
     @Override
-    protected void setupActivityComponent(AppComponent appComponent) {
-        DaggerMainActivityComponent.builder().appComponent(appComponent).mainActivityModule(new MainActivityModule(this)).build().inject(this);
-
+    protected void startInject() {
+        getActivityComponent().inject(this);
     }
+
+
+
 
 
     @Override

@@ -5,6 +5,7 @@ import android.databinding.Bindable;
 
 /**
  * Created by mo on 16-4-26.
+ * @author mo
  */
 public class MainViewModel extends BaseObservable {
 

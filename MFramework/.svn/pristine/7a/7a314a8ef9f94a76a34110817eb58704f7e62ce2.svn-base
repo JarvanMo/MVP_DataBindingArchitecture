@@ -297,24 +297,17 @@ public abstract class RecyclerViewAdapter<VDB extends ViewDataBinding, I, VH ext
 
         VDB binding = holder.getBinding();
         I item = getItem(position);
-//        try {
-//            Method method = binding.getClass().getMethod("set" + item.getClass().getSimpleName(), item.getClass());
-//            method.invoke(binding, item);
-//        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Method method = binding.getClass().getMethod("set" + item.getClass().getSimpleName(), item.getClass());
+            method.invoke(binding, item);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
 
         onControlView(item, binding, holder, position);
     }
 
-    /***
-     * @param item data
-     * @param binding your binding object
-     * @param holder your view holder
-     * @param position current item position
-     * In this method you must bing your data with binding
-     * */
     public abstract void onControlView(I item, VDB binding, VH holder, int position);
 
 

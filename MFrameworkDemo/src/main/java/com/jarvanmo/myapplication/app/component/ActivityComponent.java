@@ -11,6 +11,7 @@ import dagger.Component;
 
 /**
  * Created by mo on 16-4-26.
+ *
  */
 
 @ActivityScope
@@ -19,5 +20,5 @@ public interface ActivityComponent {
 
     DemoBaseActivity activity();
 
-    void inject(MainActivity activity);
+    void inject(DemoBaseActivity activity);
 }
