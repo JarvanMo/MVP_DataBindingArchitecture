@@ -14,9 +14,8 @@ import com.jarvanmo.myapplication.app.module.AppModule;
 
 /**
  * Created by mo on 16-4-27.
- * a demo
  */
-public abstract class DemoBaseActivity extends BaseActivity{
+public abstract class DemoBaseActivity<V extends BaseMvpView, P extends BasePresenter<V>> extends BaseActivity<V, P> {
 
 
     @Override

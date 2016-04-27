@@ -30,12 +30,9 @@ import java.util.List;
 public abstract class RecyclerViewAdapter<VDB extends ViewDataBinding, I, VH extends BaseViewHolder<VDB>> extends RecyclerView.Adapter<VH> {
 
 
-    private List<I> data;
-
-
-    private Context mContext;
-
     Constructor<VH> constructor = null;
+    private List<I> data;
+    private Context mContext;
 
     @SuppressWarnings("unchecked")
     public RecyclerViewAdapter(Context context) {
@@ -80,6 +77,13 @@ public abstract class RecyclerViewAdapter<VDB extends ViewDataBinding, I, VH ext
         return data;
     }
 
+    /**
+     * reset the data used by adapter
+     */
+    public void setData(List<I> newData) {
+        data.clear();
+        addAll(newData);
+    }
 
     /**
      * @return return the last one of  data
@@ -99,15 +103,6 @@ public abstract class RecyclerViewAdapter<VDB extends ViewDataBinding, I, VH ext
 
         return result;
 
-    }
-
-
-    /**
-     * reset the data used by adapter
-     */
-    public void setData(List<I> newData) {
-        data.clear();
-        addAll(newData);
     }
 
     /**

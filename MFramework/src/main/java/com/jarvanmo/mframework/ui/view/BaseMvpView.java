@@ -1,10 +1,8 @@
 package com.jarvanmo.mframework.ui.view;
 
-import com.hannesdorfmann.mosby.mvp.MvpView;
-
 /**
- * Created by mo on 16-4-26.
- *
+ *@author mo
+ * mvp view
  */
-public interface BaseMvpView extends MvpView {
+public interface BaseMvpView {
 }

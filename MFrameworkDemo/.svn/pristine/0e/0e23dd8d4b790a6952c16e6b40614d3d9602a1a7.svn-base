@@ -1,11 +1,14 @@
 package com.jarvanmo.myapplication.ui.activity;
 
 import android.app.ProgressDialog;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.jarvanmo.mframework.util.MToast;
+import com.jarvanmo.myapplication.R;
 import com.jarvanmo.myapplication.app.DemoBaseActivity;
 import com.jarvanmo.myapplication.databinding.ActivityMainBinding;
 import com.jarvanmo.myapplication.domain.model.User;
@@ -15,7 +18,7 @@ import com.jarvanmo.myapplication.ui.viewmodel.MainViewModel;
 
 import javax.inject.Inject;
 
-public class MainActivity extends DemoBaseActivity implements IMainView {
+public class MainActivity extends DemoBaseActivity<IMainView, MainPresenter> implements IMainView {
 
 
     @Inject
@@ -54,6 +57,11 @@ public class MainActivity extends DemoBaseActivity implements IMainView {
     }
 
 
+    @NonNull
+    @Override
+    public MainPresenter createPresenter() {
+        return mPresenter;
+    }
 
 
 

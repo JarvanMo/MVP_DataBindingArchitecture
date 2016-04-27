@@ -5,8 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by mo on 16-4-26.
- *
+ * @author mo
+ * base view holder that use data binding
  *
  */
 public class BaseViewHolder<VDB extends ViewDataBinding> extends RecyclerView.ViewHolder {

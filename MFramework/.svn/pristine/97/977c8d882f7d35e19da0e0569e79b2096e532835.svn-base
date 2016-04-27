@@ -3,22 +3,27 @@ package com.jarvanmo.mframework.ui.activity;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
-import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
 
+import com.hannesdorfmann.mosby.mvp.MvpActivity;
+import com.jarvanmo.mframework.ui.presenter.BasePresenter;
+import com.jarvanmo.mframework.ui.view.BaseMvpView;
 import com.jarvanmo.mframework.util.MToast;
 
 /**
  * Created by mo on 16-4-26.
- *
  * @author mo
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<V extends BaseMvpView, P extends BasePresenter<V>> extends MvpActivity<V, P> {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setPresenter(createPresenter());
     }
 
 

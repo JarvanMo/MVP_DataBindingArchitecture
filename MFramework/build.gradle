@@ -52,5 +52,4 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
 
     //mvp
-    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
 }

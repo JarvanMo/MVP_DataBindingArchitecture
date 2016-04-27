@@ -8,8 +8,6 @@ import java.io.File;
 
 /**
  * Created by mo on 15-11-26.
- *
- *
  */
 public class CacheFileUtil {
 
