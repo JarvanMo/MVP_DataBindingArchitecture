@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.jarvanmo.mframework.util.MToast;
 import com.jarvanmo.myapplication.app.DemoBaseActivity;
+import com.jarvanmo.myapplication.app.Test;
 import com.jarvanmo.myapplication.app.component.AppComponent;
 import com.jarvanmo.myapplication.app.component.DaggerMainActivityComponent;
 import com.jarvanmo.myapplication.app.module.MainActivityModule;
@@ -27,16 +28,19 @@ public class MainActivity extends DemoBaseActivity implements IMainView {
     ActivityMainBinding activityMainBinding;
     @Inject
     ApiService apiService;
+    @Inject
+    Test test;
 
     ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (apiService != null) {
+        if (test != null) {
             MToast.showToast("inject ok");
-            mPresenter.attachView(this);
         }
+
+        mPresenter.attachView(this);
 
         activityMainBinding.signIn.setOnClickListener(new View.OnClickListener() {
             @Override

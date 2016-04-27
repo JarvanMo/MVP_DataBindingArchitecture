@@ -44,9 +44,9 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile project(':MFramework')
-
-    compile 'com.google.dagger:dagger:2.2' // dagger2
-    apt 'com.google.dagger:dagger-compiler:2.2' // dagger2
+    compile 'com.google.dagger:dagger:2.2'
+    // dagger2
+    apt 'com.google.dagger:dagger-compiler:2.2'
+    // dagger2
     provided 'javax.annotation:jsr250-api:1.0'
-
 }
