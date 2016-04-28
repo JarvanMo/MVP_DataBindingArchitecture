@@ -3,8 +3,6 @@ package com.jarvanmo.myapplication.app.module;
 import android.databinding.DataBindingUtil;
 
 import com.jarvanmo.myapplication.R;
-import com.jarvanmo.myapplication.app.AAA;
-import com.jarvanmo.myapplication.app.Test;
 import com.jarvanmo.myapplication.databinding.ActivityMainBinding;
 import com.jarvanmo.myapplication.ui.activity.MainActivity;
 import com.jarvanmo.myapplication.ui.presenter.MainPresenter;
@@ -39,11 +37,5 @@ public class MainActivityModule {
     @Provides
     ActivityMainBinding provideActivityMainBinding() {
         return DataBindingUtil.setContentView(mMainActivity, R.layout.activity_main);
-    }
-
-    @Provides
-    Test provideTest(AAA aaa){
-
-        return new Test(aaa);
     }
 }

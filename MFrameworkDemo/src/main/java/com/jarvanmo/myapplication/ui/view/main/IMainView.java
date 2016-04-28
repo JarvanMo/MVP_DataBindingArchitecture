@@ -7,6 +7,7 @@ import com.jarvanmo.myapplication.ui.viewmodel.MainViewModel;
 
 /**
  * Created by mo on 16-4-26.
+ *
  */
 public interface IMainView extends BaseMvpView {
 

@@ -1,6 +1,8 @@
 package com.jarvanmo.myapplication.ui.presenter;
 
 import com.jarvanmo.mframework.ui.presenter.BasePresenter;
+import com.jarvanmo.myapplication.app.DemoApplication;
+import com.jarvanmo.myapplication.app.scope.ActivityScope;
 import com.jarvanmo.myapplication.domain.biz.ISignIn.ISignInBiz;
 import com.jarvanmo.myapplication.domain.biz.ISignIn.OnSignInListener;
 import com.jarvanmo.myapplication.domain.biz.ISignIn.SignInBizIml;
@@ -12,6 +14,7 @@ import com.jarvanmo.myapplication.ui.viewmodel.MainViewModel;
  * Created by mo on 16-4-26.
  *
  */
+@ActivityScope
 public class MainPresenter implements BasePresenter<IMainView> {
 
     private ISignInBiz signInBiz = new SignInBizIml();

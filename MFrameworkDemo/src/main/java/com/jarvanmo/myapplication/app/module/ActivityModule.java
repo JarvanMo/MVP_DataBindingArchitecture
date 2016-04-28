@@ -4,7 +4,6 @@ import android.databinding.DataBindingUtil;
 
 import com.jarvanmo.myapplication.R;
 import com.jarvanmo.myapplication.app.DemoBaseActivity;
-import com.jarvanmo.myapplication.app.Test;
 import com.jarvanmo.myapplication.app.scope.ActivityScope;
 import com.jarvanmo.myapplication.databinding.ActivityMainBinding;
 import com.jarvanmo.myapplication.ui.presenter.MainPresenter;
