@@ -305,17 +305,16 @@ public abstract class RecyclerViewAdapter<VDB extends ViewDataBinding, I, VH ext
 //        }
 
 
-        onControlView(item, binding, holder, position);
+        onControlView(item, binding, position);
     }
 
     /***
      * @param item     data
      * @param binding  your binding object
-     * @param holder   your view holder
      * @param position current item position
      *                 In this method you must bing your data with binding
      */
-    public abstract void onControlView(I item, VDB binding, VH holder, int position);
+    public abstract void onControlView(I item, VDB binding, int position);
 
 
     public

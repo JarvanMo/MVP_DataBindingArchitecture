@@ -1,0 +1,45 @@
+package com.jarvanmo.myapplication.domain.biz.signin;
+
+import com.jarvanmo.myapplication.domain.model.User;
+
+import javax.inject.Inject;
+
+/**
+ * Created by mo on 16-4-26.
+ *
+ */
+public class SignInBizIml implements ISignInBiz {
+
+
+    @Inject
+    public SignInBizIml(){
+
+    }
+
+    @Override
+    public boolean signIn(final User user, final OnSignInListener onSignInListener) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    onSignInListener.onSignFailed("sign failed");
+                    e.printStackTrace();
+                }
+
+                if ("zxy".equals(user.getUserName()) && "123".equals(user.getPassword())) {
+                    onSignInListener.onSignSuccess(user);
+                } else {
+                    user.setUserName("unknown");
+                    user.setPassword("unknown");
+                    onSignInListener.onSignFailed("wrong account or password");
+                }
+            }
+
+        }).start();
+        return false;
+    }
+}

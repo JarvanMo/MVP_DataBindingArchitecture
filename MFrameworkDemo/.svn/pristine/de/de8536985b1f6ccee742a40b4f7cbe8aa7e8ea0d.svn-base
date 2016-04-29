@@ -1,6 +1,8 @@
-package com.jarvanmo.myapplication.domain.biz.ISignIn;
+package com.jarvanmo.myapplication.domain.biz.signin;
 
 import com.jarvanmo.myapplication.domain.model.User;
+
+import javax.inject.Inject;
 
 /**
  * Created by mo on 16-4-26.
@@ -8,6 +10,11 @@ import com.jarvanmo.myapplication.domain.model.User;
  */
 public class SignInBizIml implements ISignInBiz {
 
+
+    @Inject
+    public SignInBizIml(){
+
+    }
 
     @Override
     public boolean signIn(final User user, final OnSignInListener onSignInListener) {
